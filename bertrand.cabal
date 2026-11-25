@@ -1,0 +1,30 @@
+cabal-version:   3.8
+name:            bertrand
+version:         0.1.0.0
+license:         NONE
+author:          vgarzareyna
+maintainer:      vgarzareyna@gmail.com
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  MyLib
+    build-depends:    
+        , base ^>=4.18.3.0
+        , random
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable bertrand
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        , base ^>=4.18.3.0
+        , bertrand
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
